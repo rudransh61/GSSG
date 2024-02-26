@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>index</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../styles/index.css">
+</head>
+<body>
+    <article>
+        <h1>index</h1>
+        <h1>GSSG - GoLang Static Site Generator</h1>
+
+<p></p>
+
+<h2>Introduction</h2>
+
+<p>
+GSSG is a minimal static site generator written in Go (Golang). It converts Markdown files into HTML and provides a basic web server for previewing your generated content. This guide will walk you through setting up and using GSSG.
+</p>
+
+<h2>Prerequisites</h2>
+
+<p>
+- <a href="https://golang.org/">Go</a> installed on your machine.
+</p>
+
+<h2>Installation</h2>
+
+<p>
+1. Clone the GopherPages repository:
+
+    <code>bash
+    git clone https://github.com/rudransh61/GSSG.git
+    cd GSSG
+</code>
+
+2. Install the required Go packages:
+
+    <code>bash
+    go get -u github.com/radovskyb/watcher
+    go get -u github.com/russross/blackfriday/v2
+</code>
+
+3. Run the GSSG :
+
+    <code>bash
+    go run main.go
+</code>
+</p>
+
+<h2>Getting Started</h2>
+
+<p>
+1. <strong>Create Content:</strong>
+
+    Place your Markdown files in the <code>content</code> directory. For example, create a file named <code>example.md</code> with the following content:
+
+    <code>markdown
+    &lt;hr&gt;
+    title: Example Page
+    date: 2024-02-25
+    &lt;hr&gt;
+
+    # Welcome to GopherPages
+
+    This is an example page for your GSSG static site.
+</code>
+
+2. <strong>Start GSSG:</strong>
+
+    Run the GSSG:
+
+    <code>bash
+    go run main.go
+</code>
+
+    This will start the file watcher and the web server.
+
+3. <strong>Access the Generated Site:</strong>
+
+    Open your browser and go to <a href="http://localhost:8080">http://localhost:8080</a>. You should see your generated site.
+
+4. <strong>Preview Changes:</strong>
+
+    Make changes to your Markdown files in the <code>content</code> directory. GopherPages will automatically regenerate the site when you save changes. Refresh your browser to see the updates.
+</p>
+
+<h2>Customize Styles</h2>
+
+<p>
+GSSG comes with a basic stylesheet. If you want to customize the styles, follow these steps:
+
+1. Open the <code>styles/index.css</code> file.
+
+2. Update the styles based on your preferences.
+
+3. Save the changes.
+
+4. GSSG will automatically detect the changes and apply the updated styles.
+</p>
+
+<h2>Deploying Your Site</h2>
+
+<p>
+Once you are satisfied with your generated site, you can deploy it to a web hosting service. Simply copy the contents of the <code>output</code> directory to your desired hosting location.
+</p>
+
+<h2>Conclusion</h2>
+
+<p>
+Congratulations! You&rsquo;ve successfully set up and used GSSG to generate and preview your static site. Feel free to explore more features and customize the generator to suit your needs. If you encounter any issues or have suggestions for improvements, please check the <a href="https://github.com/rudransh61/GSSGs">GitHub repository</a> and contribute or create an issue.</p>
+
+    </article>
+</body>
+</html>

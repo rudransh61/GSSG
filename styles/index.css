@@ -1,0 +1,89 @@
+/* Reset some default styles */
+body, h1, h2, h3, p, ul, ol, li {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  background-color: #f8f8f8;
+  color: #333;
+  margin: 20px;
+}
+
+h1, h2, h3 {
+  color: #333;
+}
+
+h1 {
+  font-size: 2em;
+  margin-bottom: 0.5em;
+}
+
+h2 {
+  font-size: 1.5em;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+}
+
+h3 {
+  font-size: 1.2em;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+}
+
+p {
+  margin-bottom: 1em;
+}
+
+a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+ul, ol {
+  margin-bottom: 1em;
+}
+
+li {
+  margin-bottom: 0.5em;
+}
+
+article {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Add some padding and border to code blocks */
+code {
+  padding: 0.2em 0.4em;
+  background-color: #f3f3f3;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  font-family: 'Courier New', monospace;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 600px) {
+  body {
+      margin: 10px;
+  }
+  article {
+      max-width: none;
+  }
+}
+
+
+/* Style for horizontal rule */
+hr {
+  border: 0;
+  height: 1px;
+  background-color: #9e9d9d; /* Light gray color */
+  margin: 1.5em 0; /* Adjust margin for space above and below */
+  opacity: 0.5; /* Adjust opacity for visibility */
+}

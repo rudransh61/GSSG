@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"html/template"
 	"log"
+	"net/http"
 	"os"
 	"path/filepath"
 	"time"
@@ -18,6 +19,17 @@ type Page struct {
 }
 
 func main() {
+	// Start the HTTP server
+	go func() {
+        fmt.Printf("Starting server at http://localhost:8080\n")
+        http.Handle("/", http.FileServer(http.Dir("output")))
+        http.Handle("/styles/", http.StripPrefix("/styles/", http.FileServer(http.Dir("styles"))))
+        if err := http.ListenAndServe(":8080", nil); err != nil {
+            log.Fatal(err)
+        }
+    }()
+
+	// Start watching for changes
 	watchForChanges()
 }
 
@@ -29,6 +41,7 @@ func watchForChanges() {
 			select {
 			case event := <-w.Event:
 				if event.Op == watcher.Write || event.Op == watcher.Create || event.Op == watcher.Rename {
+					fmt.Printf("File changed: %s\n", event.Path)
 					generateSite()
 				}
 			case err := <-w.Error:
@@ -100,6 +113,8 @@ func generateHTML(outputFilePath string, page Page) {
 <html>
 <head>
     <title>{{.Title}}</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../styles/index.css">
 </head>
 <body>
     <article>
